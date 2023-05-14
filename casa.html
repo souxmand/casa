@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amanda e cauã</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+// Desenhar a base da casa
+ 
+//laterais
+ctx.fillStyle = "black";
+ctx.fillRect(15, 232, 3, 202);
+ctx.fillRect(305, 232, 3, 202);
+
+
+//base 
+ctx.fillRect(15, 434, 293, 3);
+
+// Desenhar a porta
+  ctx.fillStyle = "black";
+  ctx.lineWidth = 3;
+  ctx.strokeRect(135, 335, 50, 100);
+  
+  
+// Desenhar a maçaneta
+  ctx.fillStyle = "black";
+   ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(145, 385, 4, 0, Math.PI * 2);
+  ctx.stroke();
+ 
+
+// Desenhar as janelas
+  ctx.strokeRect(45, 325, 50, 40);
+  ctx.strokeRect(135, 250, 50, 40);
+  ctx.strokeRect(225, 325, 50, 40);
+  ctx.lineWidth = 3;
+
+
+// Desenhar as linhas pretas nas janelas
+   ctx.strokeStyle = "black";
+   ctx.lineWidth = 3;
+   //janela 1
+   ctx.fillRect(70, 325, 3, 40);
+   ctx.fillRect(45, 345, 50, 3);
+
+   //janela 2
+   ctx.fillRect(160, 250, 3, 40);
+   ctx.fillRect(135, 270, 50, 3);
+
+   //janela 3
+   ctx.fillRect(250, 325, 3, 40);
+   ctx.fillRect(225, 345, 50, 3);
+  
+// Janela esquerda
+   ctx.beginPath();
+   ctx.moveTo(70, 185);
+   ctx.lineTo(100, 185);
+   ctx.moveTo(85, 170);
+   ctx.lineTo(85, 200);
+
+  // Janela centralizada
+    ctx.beginPath();
+    ctx.moveTo(145, 155);
+    ctx.lineTo(175, 155);
+    ctx.moveTo(160, 140);
+    ctx.lineTo(160, 170);
+
+// Janela direita
+    ctx.beginPath();
+    ctx.moveTo(220, 185);
+    ctx.lineTo(250, 185);
+    ctx.moveTo(235, 170);
+    ctx.lineTo(235, 200);
+
+
+
+// Desenhar o telhado
+//cima
+
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(0, 220);
+    ctx.lineTo(160, 120);
+    ctx.lineTo(320, 220);
+    ctx.stroke();
+
+    //baixo
+
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(4, 240);
+    ctx.lineTo(160, 145);
+    ctx.lineTo(316, 240);
+    ctx.stroke();
+
+    //união
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(4, 240);
+    ctx.lineTo(1, 220);
+    ctx.stroke();
+
+    //união 2
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(315, 240);
+    ctx.lineTo(320, 220);
+    ctx.stroke();
+ 
+
+// Desenhar a chaminé
+// base
+    ctx.strokeStyle = "black";
+    ctx.fillRect(250, 136, 3, 40);
+    ctx.fillRect(280, 136, 3, 60);
+
+//topo
+const x = 246;
+const y = 123;
+const width = 41;
+const height = 12;
+const cornerRadius = 5;
+
+ctx.beginPath();
+ctx.moveTo(x + cornerRadius, y);
+ctx.lineTo(x + width - cornerRadius, y);
+ctx.arc(x + width - cornerRadius, y + cornerRadius, cornerRadius, -Math.PI / 2, 0);
+ctx.lineTo(x + width, y + height - cornerRadius);
+ctx.arc(x + width - cornerRadius, y + height - cornerRadius, cornerRadius, 0, Math.PI / 2);
+ctx.lineTo(x + cornerRadius, y + height);
+ctx.arc(x + cornerRadius, y + height - cornerRadius, cornerRadius, Math.PI / 2, Math.PI);
+ctx.lineTo(x, y + cornerRadius);
+ctx.arc(x + cornerRadius, y + cornerRadius, cornerRadius, Math.PI, -Math.PI / 2);
+ctx.closePath();
+
+ctx.strokeStyle = "black";
+ctx.stroke();
+
+
+</script>
+</body>
+</html>
